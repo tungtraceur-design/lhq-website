@@ -21,8 +21,8 @@ export default function BlogPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#323232]" />
           <div className="relative z-10 flex w-full items-end justify-between gap-8">
             <div>
-              <h2 className="font-display text-[30px] font-bold leading-[38px] text-white">{hero.title}</h2>
-              <p className="mt-2 text-lg font-medium leading-[26px] text-[#d1d5db]">{hero.date}</p>
+              <h2 className="font-display text-[36px] leading-[1.15] tracking-[-0.01em] text-white">{hero.title}</h2>
+              <p className="type-label mt-3 text-[#d1d5db]">{hero.date}</p>
             </div>
             <div className="flex gap-2">
               <span className="flex size-10 items-center justify-center bg-white text-ink">
@@ -39,8 +39,8 @@ export default function BlogPage() {
             <Link key={article.slug} href={`/blog/${article.slug}`} className="flex flex-col gap-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={article.thumb} alt="" className="aspect-[337/225] w-full object-cover" />
-              <p className="text-base font-medium leading-6">{article.title}</p>
-              <p className="text-base leading-6 text-ink-soft">{article.date}</p>
+              <p className="type-title">{article.title}</p>
+              <p className="type-label text-ink-muted">{article.date}</p>
             </Link>
           ))}
         </div>

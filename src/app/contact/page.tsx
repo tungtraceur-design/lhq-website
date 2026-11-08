@@ -27,7 +27,7 @@ export default function ContactPage() {
               <Field label={t.phone} placeholder={t.phonePh} type="tel" />
             </div>
             <label className="flex flex-col gap-2.5">
-              <span className="text-base font-semibold leading-6 text-dark">{t.message}</span>
+              <span className="type-label text-ink">{t.message}</span>
               <textarea
                 className="min-h-[220px] flex-1 border border-stroke-input bg-white p-5 text-base leading-6 text-ink placeholder:text-muted"
                 placeholder={t.messagePh}
@@ -36,11 +36,11 @@ export default function ContactPage() {
             <div className="col-span-full flex justify-center">
               <DarkButton type="submit">{t.send}</DarkButton>
             </div>
-            {sent ? <p className="col-span-full text-center text-sm text-ink-soft">{t.sent}</p> : null}
+            {sent ? <p className="col-span-full text-center text-sm text-ink-muted">{t.sent}</p> : null}
           </form>
         </div>
         <div className="flex flex-col items-center gap-4">
-          <p className="font-display text-2xl font-semibold leading-[30px]">{t.follow}</p>
+          <p className="type-heading">{t.follow}</p>
           <div className="flex items-center gap-4">
             {socials.map((social) => (
               <a key={social.name} href={social.href} target="_blank" rel="noreferrer" aria-label={social.name}>
@@ -66,7 +66,7 @@ function Field({
 }) {
   return (
     <label className="flex flex-col gap-2.5">
-      <span className="text-base font-semibold leading-6 text-dark">{label}</span>
+      <span className="type-label text-ink">{label}</span>
       <input
         type={type}
         required={type !== "tel"}

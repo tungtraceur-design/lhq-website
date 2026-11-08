@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useLocale } from "@/lib/locale";
-import { CloseIcon, MenuIcon } from "./icons";
+import { LogoMark, MenuToggleIcon } from "./icons";
 
 type HeaderProps = {
   menuOpen: boolean;
@@ -16,10 +16,14 @@ export function Header({ menuOpen, onToggleMenu }: HeaderProps) {
     <header className="relative z-30 flex h-[88px] w-full items-center justify-between px-4 lg:px-12">
       <Link
         href="/"
-        className="font-logo text-[40px] leading-[56px] text-ink"
-        onClick={() => menuOpen && onToggleMenu()}
+        className={`text-ink transition-opacity duration-100 ease-in-out ${
+          menuOpen ? "pointer-events-none opacity-0" : ""
+        }`}
+        aria-label="Lưu Hồng Quang — home"
+        aria-hidden={menuOpen || undefined}
+        tabIndex={menuOpen ? -1 : undefined}
       >
-        LHQ
+        <LogoMark />
       </Link>
       <div className="flex items-center gap-10">
         <div className="hidden items-center gap-6 lg:flex">
@@ -36,12 +40,12 @@ export function Header({ menuOpen, onToggleMenu }: HeaderProps) {
         </div>
         <button
           type="button"
-          className="flex size-14 items-center justify-center text-ink"
+          className="group flex size-14 items-center justify-center text-ink"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           onClick={onToggleMenu}
         >
-          {menuOpen ? <CloseIcon /> : <MenuIcon />}
+          <MenuToggleIcon open={menuOpen} />
         </button>
       </div>
     </header>
@@ -61,10 +65,12 @@ function LanguageButton({
     <button
       type="button"
       onClick={onClick}
-      className="flex flex-col items-center gap-2 font-display text-2xl font-semibold leading-[30px] text-ink"
+      aria-pressed={active}
+      className={`type-label border-b pb-[7px] text-ink ${
+        active ? "border-ink" : "border-transparent"
+      }`}
     >
       {label}
-      <span className={`h-px w-full ${active ? "bg-ink" : "bg-transparent"}`} />
     </button>
   );
 }

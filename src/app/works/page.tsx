@@ -44,7 +44,7 @@ function AlbumCard({
   return (
     <Link href={`/works/${slug}`} className="flex w-full flex-col gap-2">
       <MonoImage src={image} alt={title} className="aspect-[337/225] w-full" />
-      <p className="text-base font-medium leading-6 whitespace-pre-wrap">{title}</p>
+      <p className="type-title whitespace-pre-wrap">{title}</p>
     </Link>
   );
 }

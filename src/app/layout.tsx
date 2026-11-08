@@ -1,17 +1,34 @@
 import type { Metadata } from "next";
-import { Fraunces, Open_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import { LocaleProvider } from "@/lib/locale";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  subsets: ["latin", "vietnamese"],
-  variable: "--font-fraunces",
-  axes: ["SOFT", "WONK"],
+// Displaay trial files: replace with licensed WOFF2s (same file names) before deploying.
+const recklessS = localFont({
+  src: [
+    { path: "./fonts/reckless/reckless-s-regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/reckless/reckless-s-italic.woff2", weight: "400", style: "italic" },
+    { path: "./fonts/reckless/reckless-s-medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/reckless/reckless-s-bold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-reckless-s",
+  adjustFontFallback: "Times New Roman",
 });
 
-const openSans = Open_Sans({
-  subsets: ["latin", "vietnamese"],
-  variable: "--font-open-sans",
+const recklessM = localFont({
+  src: [
+    { path: "./fonts/reckless/reckless-m-regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/reckless/reckless-m-italic.woff2", weight: "400", style: "italic" },
+  ],
+  variable: "--font-reckless-m",
+  adjustFontFallback: "Times New Roman",
+});
+
+const recklessWide = localFont({
+  src: "./fonts/reckless/reckless-wide-xl-bold.woff2",
+  weight: "700",
+  variable: "--font-reckless-wide",
+  adjustFontFallback: "Times New Roman",
 });
 
 export const metadata: Metadata = {
@@ -24,14 +41,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${openSans.variable} h-full antialiased`}
+      className={`${recklessS.variable} ${recklessM.variable} ${recklessWide.variable} h-full antialiased`}
     >
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Sansita+One&display=swap"
-        />
-      </head>
       <body className="min-h-full bg-paper font-body text-ink">
         <LocaleProvider>{children}</LocaleProvider>
       </body>

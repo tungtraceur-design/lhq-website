@@ -52,13 +52,13 @@ function AwardsPanel() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={award.image} alt="" className="max-h-[110px] max-w-[140px] object-contain opacity-70" />
             </div>
-            <p className="font-display text-2xl font-semibold leading-[30px]">{award.name}</p>
-            <p className="text-base font-medium leading-6 text-ink-soft">{award.count}</p>
+            <p className="type-title">{award.name}</p>
+            <p className="type-label text-ink-muted">{award.count}</p>
           </div>
         ))}
       </div>
       <div className="w-full">
-        <div className="flex gap-6 px-6 py-3 text-base leading-6 text-ink-soft">
+        <div className="type-label flex gap-6 px-6 py-3 text-ink-muted">
           <span className="flex w-[67px] items-center gap-2">
             {t.year} <ChevronDown />
           </span>
@@ -69,7 +69,7 @@ function AwardsPanel() {
           {awards.map((award, index) => (
             <div
               key={`${award.title}-${index}`}
-              className="flex gap-6 border-b border-stroke p-6 text-base font-medium last:border-b-0"
+              className="flex gap-6 border-b border-stroke p-6 text-base leading-6 last:border-b-0"
             >
               <p className="w-[60px]">{award.year}</p>
               <div className="flex-1">
@@ -102,7 +102,7 @@ function BiographyPanel({
 }) {
   return (
     <>
-      <p className="text-center text-base leading-6">{lead}</p>
+      <p className="text-center text-[21px] leading-[1.5]">{lead}</p>
       <div className="relative w-full">
         <div className="absolute bottom-24 left-1/2 top-6 hidden w-px -translate-x-1/2 bg-stroke lg:block" />
         <div className="flex flex-col gap-20">
@@ -113,8 +113,8 @@ function BiographyPanel({
               return (
                 <div key={item.year} className="relative z-10 flex flex-col items-center text-center">
                   <span className="mb-6 size-6 rounded-full border border-stroke bg-paper" />
-                  <p className="text-base font-bold leading-6">{item.year}</p>
-                  <p className="mt-2 max-w-[414px] text-sm leading-[22px]">{item.body}</p>
+                  <p className="type-title">{item.year}</p>
+                  <p className="mt-2 max-w-[414px] text-base leading-[1.6]">{item.body}</p>
                   <MonoImage src="/images/etude-3.png" alt="" className="mt-6 aspect-video w-full max-w-[367px]" play />
                 </div>
               );
@@ -122,8 +122,8 @@ function BiographyPanel({
             return (
               <div key={item.year} className="relative grid items-center gap-8 lg:grid-cols-[1fr_24px_1fr]">
                 <div className={imageLeft ? "lg:col-start-3" : ""}>
-                  <p className="text-base font-bold leading-6">{item.year}</p>
-                  <p className="mt-2 text-sm leading-[22px]">{item.body}</p>
+                  <p className="type-title">{item.year}</p>
+                  <p className="mt-2 text-base leading-[1.6]">{item.body}</p>
                 </div>
                 <span className="relative z-10 hidden size-6 justify-self-center rounded-full border border-stroke bg-paper lg:block" />
                 <MonoImage
@@ -137,9 +137,9 @@ function BiographyPanel({
           })}
         </div>
       </div>
-      <p className="font-display text-2xl font-semibold leading-[30px]">{collabLabel}</p>
+      <p className="type-heading">{collabLabel}</p>
       <div className="w-full overflow-x-auto">
-        <div className="flex min-w-[640px] gap-6 border border-b-0 border-stroke px-6 py-3 text-base text-ink-soft">
+        <div className="type-label flex min-w-[640px] gap-6 border border-b-0 border-stroke px-6 py-3 text-ink-muted">
           <p className="w-[67px]">{year}</p>
           <p className="w-[256px]">{orchestra}</p>
           <p className="w-[133px]">{conductor}</p>
@@ -147,7 +147,7 @@ function BiographyPanel({
         </div>
         <div className="min-w-[640px] border border-stroke">
           {collaborations.map((row, index) => (
-            <div key={`${row.year}-${index}`} className="flex gap-6 border-b border-stroke p-6 text-base font-medium last:border-b-0">
+            <div key={`${row.year}-${index}`} className="flex gap-6 border-b border-stroke p-6 text-base leading-6 last:border-b-0">
               <p className="w-[67px]">{row.year}</p>
               <p className="w-[256px]">{row.orchestra}</p>
               <p className="w-[133px]">{row.conductor}</p>
@@ -194,8 +194,8 @@ function TestimonialCard({
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={image} alt="" className="h-full w-full object-cover" />
       </div>
-      <p className="text-center font-display text-2xl font-semibold leading-[30px]">“{quote}”</p>
-      <p className="text-center text-lg font-medium leading-[26px] text-ink-soft">
+      <p className="text-center font-title text-[24px] italic leading-[32px]">“{quote}”</p>
+      <p className="text-center text-xs font-medium uppercase leading-5 tracking-[0.1em] text-ink-muted">
         {name}
         {role ? (
           <>

@@ -51,14 +51,14 @@ function EventGroup({
 }) {
   return (
     <section className="flex w-full flex-col gap-6">
-      {title ? <h2 className="text-center font-display text-2xl font-semibold leading-[30px]">{title}</h2> : null}
+      {title ? <h2 className="type-heading text-center">{title}</h2> : null}
       {items.map((item, index) => (
         <article key={`${item.title}-${index}`} className="grid items-center gap-8 lg:grid-cols-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={item.image} alt="" className="aspect-video w-full object-cover" />
           <div className="flex flex-col items-start gap-6">
             <div>
-              <h3 className="text-lg font-bold leading-[26px]">{item.title}</h3>
+              <h3 className="type-title">{item.title}</h3>
               <div className="mt-3 flex flex-col gap-2 text-sm leading-[22px]">
                 <p className="flex items-center gap-2">
                   <CalendarIcon />

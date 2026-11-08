@@ -4,6 +4,7 @@
   --paper: #e7e5df;
   --ink: #171a1f;
   --ink-soft: #968e7a;
+  --ink-muted: #6f6857;
   --stroke: #d7d2c5;
   --stroke-strong: #232323;
   --stroke-input: #dfe4ea;
@@ -17,15 +18,17 @@
   --color-paper: var(--paper);
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
   --color-stroke: var(--stroke);
   --color-stroke-strong: var(--stroke-strong);
   --color-stroke-input: var(--stroke-input);
   --color-thumb: var(--thumb);
   --color-dark: var(--dark);
   --color-muted: var(--muted);
-  --font-display: var(--font-fraunces);
-  --font-body: var(--font-open-sans);
-  --font-logo: "Sansita One", cursive;
+  --font-display: var(--font-reckless-s), Georgia, serif;
+  --font-body: var(--font-reckless-s), Georgia, serif;
+  --font-title: var(--font-reckless-m), Georgia, serif;
+  --font-name: var(--font-reckless-wide), Georgia, serif;
 }
 
 html,
@@ -36,16 +39,7 @@ body {
 }
 
 body {
-  font-family: var(--font-open-sans), "Open Sans", sans-serif;
-}
-
-.font-logo {
-  font-family: "Sansita One", cursive;
-}
-
-.font-display {
-  font-family: var(--font-fraunces), Fraunces, serif;
-  font-variation-settings: "SOFT" 0, "WONK" 1;
+  font-family: var(--font-body);
 }
 
 .site-columns {
@@ -68,6 +62,34 @@ body {
   }
 }
 
+@utility type-label {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@utility type-title {
+  font-family: var(--font-title);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 26px;
+}
+
+@utility type-heading {
+  font-family: var(--font-title);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 35px;
+}
+
+@utility warm-mono {
+  filter: grayscale(1) sepia(0.2);
+}
+
 .mono-thumb {
   filter: grayscale(1);
   mix-blend-mode: luminosity;
@@ -80,6 +102,76 @@ body {
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+@keyframes home-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes intro-grow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.home-enter .home-fade {
+  opacity: 0;
+  animation: home-fade 400ms ease-out forwards;
+}
+
+.home-enter .home-fade-track {
+  opacity: 0;
+  animation: home-fade 400ms ease-out forwards;
+}
+
+.home-enter .home-word {
+  opacity: 0;
+  animation: home-fade 300ms ease-out forwards;
+}
+
+@keyframes menu-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.menu-enter {
+  animation: home-fade 100ms ease-in-out both;
+}
+
+.menu-item-in {
+  animation: menu-item-in 400ms ease-out both;
+}
+
+.home-chrome-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-grow {
+  animation: intro-grow 900ms ease-out forwards;
+  transform-origin: center center;
+}
+
+.player-morph {
+  transition:
+    top 480ms ease-out,
+    left 480ms ease-out,
+    width 480ms ease-out,
+    height 480ms ease-out;
 }
 
 @media (prefers-reduced-motion: reduce) {

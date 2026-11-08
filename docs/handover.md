@@ -4,7 +4,7 @@ Date: 2026-11-08. Read this before you change the site. Motion specs stay in [tr
 
 ## Where the work is
 
-GitHub `main` (`44a74f6`) has the scaffold and `docs/transitions.md` only. The design work below is **local and uncommitted** on `main`. Do not assume a fresh clone has it.
+GitHub `main` has this build. A fresh clone has the pages, components, and étude images. The Reckless trial fonts are gitignored, so a clone will not show those faces until you add licensed files at `src/app/fonts/reckless/`.
 
 Remote: https://github.com/tungtraceur-design/lhq-website
 

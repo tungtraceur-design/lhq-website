@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Reckless trial fonts (not licensed for distribution); commit licensed files instead
+/src/app/fonts/reckless/
+
+# design scratch files
+/.cursor/font-demos/
+/.cursor/logo/

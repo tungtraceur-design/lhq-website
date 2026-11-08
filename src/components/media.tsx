@@ -35,7 +35,7 @@ export function MonoImage({
 
 export function PageTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h1 className="font-display text-center text-[40px] font-bold leading-[48px] text-ink">
+    <h1 className="text-center font-display text-[40px] leading-[1.1] tracking-[-0.01em] text-ink lg:text-[50px]">
       {children}
     </h1>
   );
@@ -59,7 +59,7 @@ export function SegmentedControl({
             key={option.id}
             type="button"
             onClick={() => onChange(option.id)}
-            className={`flex items-center justify-center gap-2 px-[15px] py-2.5 text-base font-medium leading-6 ${
+            className={`type-label flex items-center justify-center gap-2 px-[15px] py-3 ${
               active
                 ? "bg-ink text-white"
                 : "border border-stroke-input bg-white text-dark"
@@ -84,7 +84,7 @@ export function DarkButton({
   return (
     <button
       type={type}
-      className="bg-dark px-6 py-3 text-base font-medium leading-6 text-white transition-opacity hover:opacity-90"
+      className="type-label bg-dark px-6 py-4 text-white transition-opacity hover:opacity-90"
     >
       {children}
     </button>

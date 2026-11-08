@@ -1,35 +1,38 @@
 export type Locale = "en" | "vi";
 
-export const songs = [
+const etudes = [
   {
-    id: "etude-1",
-    title: "Etude No.1 – Preludio",
-    image: "/images/etude-1.png",
+    name: "Preludio",
+    videoId: "lwtLTHrZfUw",
     description:
-      "This opening piece sets the stage for the entire cycle. With bold, exploratory gestures, it serves as an invitation into a vast, uncharted musical realm.",
+      "As the title suggests, a dazzling short fanfare covering all piano registers energetically sets up the grand scale of what is to come in the cycle.",
   },
-  {
-    id: "etude-2",
-    title: "Etude No.2 – Molto Vivace",
-    image: "/images/etude-2.png",
-    description:
-      "A restless study in motion, full of darting figures and sudden flashes of light.",
-  },
-  {
-    id: "etude-3",
-    title: "Etude No.3 – Tranquillo",
-    image: "/images/etude-3.png",
-    description:
-      "A still landscape of sound, where quiet lines unfold with patience and warmth.",
-  },
-  {
-    id: "etude-4",
-    title: "Etude No.4 – Allegro Agitato",
-    image: "/images/etude-4.png",
-    description:
-      "Storm and drive: agitation that never loses its architectural poise.",
-  },
+  { name: "In A minor", videoId: "hbUyl9C9_Xs", description: "" },
+  { name: "Paysage", videoId: "8bTl_pBfbqQ", description: "" },
+  { name: "Mazeppa", videoId: "LRpkNYTMaSw", description: "" },
+  { name: "Feux follets", videoId: "Ku9MaQvVl7Q", description: "" },
+  { name: "Vision", videoId: "YikMH-Sj0vU", description: "" },
+  { name: "Eroica", videoId: "ZU77yLjGCgM", description: "" },
+  { name: "Wilde Jagd", videoId: "o_ZhOiH0awo", description: "" },
+  { name: "Ricordanza", videoId: "pHgT24sjLmM", description: "" },
+  { name: "In F minor", videoId: "SgD-BqNo9tY", description: "" },
+  { name: "Harmonies du soir", videoId: "5_JJleHmY1c", description: "" },
+  { name: "Chasse-neige", videoId: "Pb_D3fiHjNQ", description: "" },
 ];
+
+export const songs = etudes.map((etude, index) => {
+  const number = index + 1;
+  const padded = String(number).padStart(2, "0");
+  return {
+    id: `etude-${number}`,
+    title: `Etude No.${number} – ${etude.name}`,
+    number,
+    name: etude.name,
+    videoId: etude.videoId,
+    image: `/images/etudes/etude-${padded}.jpg`,
+    description: etude.description,
+  };
+});
 
 export const works = [
   {
@@ -353,6 +356,9 @@ export const copy = {
     conductor: "Conductor",
     event: "Event",
     status: "Status",
+    skipVideo: "Skip video",
+    upcomingEvent: "Upcoming Event",
+    closePlayer: "Close",
     aboutLead:
       "Lưu Hồng Quang has mesmerized audiences worldwide with his technical brilliance and heartfelt expression for over two decades. Known for seamlessly blending Eastern and Western musical traditions, he has performed with renowned orchestras in Vietnam, Australia, and beyond. With numerous accolades to his name, Lưu Hồng Quang continues to inspire music lovers and redefine the classical music experience.",
   },
@@ -395,6 +401,9 @@ export const copy = {
     conductor: "Nhạc trưởng",
     event: "Sự kiện",
     status: "Kết quả",
+    skipVideo: "Bỏ qua video",
+    upcomingEvent: "Sự kiện sắp tới",
+    closePlayer: "Đóng",
     aboutLead:
       "Lưu Hồng Quang đã chinh phục khán giả khắp thế giới bằng kỹ thuật điêu luyện và sự biểu cảm chân thành trong hơn hai thập kỷ. Ông kết hợp truyền thống Đông – Tây, biểu diễn cùng nhiều dàn nhạc tại Việt Nam, Úc và nhiều nơi khác.",
   },
