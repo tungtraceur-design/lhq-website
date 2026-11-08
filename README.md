@@ -6,6 +6,8 @@ Design source: [LHQ-Website in Figma](https://www.figma.com/design/AP5V1Ut2BFDma
 
 Motion specs (GIFs and keyframes, no Figma Motion): [docs/transitions.md](docs/transitions.md).
 
+Current build status for the next session: [docs/handover.md](docs/handover.md).
+
 ## Run
 
 ```bash
