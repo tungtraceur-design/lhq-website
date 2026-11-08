@@ -9,6 +9,7 @@ import { IntroVideo } from "./intro-video";
 import { ARTIST_POSTER, MeetArtist } from "./meet-artist";
 import { PlayerOverlay, type PlayerGrow, type PlayerOrigin } from "./player-overlay";
 import { SiteShell } from "./site-shell";
+import { SwearVietText } from "./swear-viet-text";
 import { TrackCard } from "./track-card";
 
 const SKIP_KEY = "lhq-skip-video";
@@ -79,9 +80,11 @@ export function HomeScreen() {
                   </>
                 ) : (
                   <>
-                    {t.homeTitle}
+                    <SwearVietText text={t.homeTitle} />
                     <br />
-                    <em>{t.homeTitle2}</em>
+                    <em>
+                      <SwearVietText text={t.homeTitle2} italic />
+                    </em>
                   </>
                 )}
               </h1>
@@ -145,9 +148,11 @@ export function HomeScreen() {
               </>
             ) : (
               <>
-                {t.homeTitle}
+                <SwearVietText text={t.homeTitle} />
                 <br />
-                <em>{t.homeTitle2}</em>
+                <em>
+                  <SwearVietText text={t.homeTitle2} italic />
+                </em>
               </>
             )}
           </h1>
