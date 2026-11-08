@@ -18,66 +18,66 @@
   --font-swear-banner: "Swear Banner";
 }
 
-/* Font files in /public/fonts. Georgia is the fallback if a file is missing. */
+/* Bundled from public/fonts so the GitHub Pages base path is included. */
 @font-face {
   font-family: "Reckless S";
-  src: url("/fonts/reckless/reckless-s-regular.woff2") format("woff2");
+  src: url("../../public/fonts/reckless/reckless-s-regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Reckless S";
-  src: url("/fonts/reckless/reckless-s-italic.woff2") format("woff2");
+  src: url("../../public/fonts/reckless/reckless-s-italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Reckless S";
-  src: url("/fonts/reckless/reckless-s-medium.woff2") format("woff2");
+  src: url("../../public/fonts/reckless/reckless-s-medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Reckless S";
-  src: url("/fonts/reckless/reckless-s-bold.woff2") format("woff2");
+  src: url("../../public/fonts/reckless/reckless-s-bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Reckless M";
-  src: url("/fonts/reckless/reckless-m-regular.woff2") format("woff2");
+  src: url("../../public/fonts/reckless/reckless-m-regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Reckless M";
-  src: url("/fonts/reckless/reckless-m-italic.woff2") format("woff2");
+  src: url("../../public/fonts/reckless/reckless-m-italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Reckless Wide";
-  src: url("/fonts/reckless/reckless-wide-xl-bold.woff2") format("woff2");
+  src: url("../../public/fonts/reckless/reckless-wide-xl-bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Swear Banner";
-  src: url("/fonts/swear/swear-banner-regular.otf") format("opentype");
+  src: url("../../public/fonts/swear/swear-banner-regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Swear Banner";
-  src: url("/fonts/swear/swear-banner-italic.otf") format("opentype");
+  src: url("../../public/fonts/swear/swear-banner-italic.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
