@@ -8,6 +8,10 @@ GitHub `main` has this build. A fresh clone has the pages, components, and étud
 
 Remote: https://github.com/tungtraceur-design/lhq-website
 
+Preview: https://tungtraceur-design.github.io/lhq-website/
+
+The preview is a static export from `.github/workflows/deploy.yml`. It does not include the Reckless or Swear files. Those stay on this machine. The preview uses Georgia until the licensed web fonts are in the build.
+
 ## Product
 
 Site for pianist Lưu Hồng Quang. Design file: [LHQ-Website](https://www.figma.com/design/AP5V1Ut2BFDmazsXOMzqkF/LHQ-Website) (`fileKey` `AP5V1Ut2BFDmazsXOMzqkF`).
@@ -37,8 +41,11 @@ Reckless (Displaay), trial files, `next/font/local` in `src/app/layout.tsx`.
 | `--font-reckless-s` | S regular, italic, medium, bold | `--font-display` and `--font-body` |
 | `--font-reckless-m` | M regular, italic | `--font-title` |
 | `--font-reckless-wide` | Wide XL bold | `--font-name` |
+| `--font-swear-banner` | Banner regular, italic | `--font-hero`, the two home headlines only |
 
-Files live in `src/app/fonts/reckless/`. That folder is gitignored. **Trial fonts are not licensed for production.** Replace them with licensed WOFF2 files of the same names before deploy. Do not commit the trial files.
+The home hero uses Swear Banner. Menu, page titles, and body stay in Reckless. Swear files live in `src/app/fonts/swear/` and are gitignored. The copies in the repo are the OH no demo files. The license is bought. Replace the demo files with the licensed WOFF2s of the same names before deploy.
+
+Reckless files live in `src/app/fonts/reckless/`. That folder is gitignored. **Trial fonts are not licensed for production.** Replace them with licensed WOFF2 files of the same names before deploy. Do not commit the trial files.
 
 `globals.css` utilities: `type-label`, `type-title`, `type-heading`, `warm-mono`. These pages use them: About, Works, Blog, Events, Contact, menu, cards, player.
 

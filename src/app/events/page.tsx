@@ -5,6 +5,7 @@ import { SiteShell } from "@/components/site-shell";
 import { DarkButton, PageTitle, SegmentedControl } from "@/components/media";
 import { BookIcon, CalendarIcon, MapPinIcon } from "@/components/icons";
 import { liveEvents, masterclasses } from "@/lib/content";
+import { asset } from "@/lib/asset";
 import { useLocale } from "@/lib/locale";
 
 export default function EventsPage() {
@@ -55,7 +56,7 @@ function EventGroup({
       {items.map((item, index) => (
         <article key={`${item.title}-${index}`} className="grid items-center gap-8 lg:grid-cols-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={item.image} alt="" className="aspect-video w-full object-cover" />
+          <img src={asset(item.image)} alt="" className="aspect-video w-full object-cover" />
           <div className="flex flex-col items-start gap-6">
             <div>
               <h3 className="type-title">{item.title}</h3>

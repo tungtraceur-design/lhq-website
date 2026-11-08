@@ -5,6 +5,7 @@ import { SiteShell } from "@/components/site-shell";
 import { PageTitle } from "@/components/media";
 import { ChevronLeft, ChevronRight } from "@/components/icons";
 import { articles } from "@/lib/content";
+import { asset } from "@/lib/asset";
 import { useLocale } from "@/lib/locale";
 
 export default function BlogPage() {
@@ -17,7 +18,7 @@ export default function BlogPage() {
         <PageTitle>{t.news}</PageTitle>
         <Link href={`/blog/${hero.slug}`} className="relative flex h-[416px] w-full items-end p-8">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={hero.image} alt="" className="absolute inset-0 h-full w-full object-cover" />
+          <img src={asset(hero.image)} alt="" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#323232]" />
           <div className="relative z-10 flex w-full items-end justify-between gap-8">
             <div>
@@ -38,7 +39,7 @@ export default function BlogPage() {
           {articles.map((article) => (
             <Link key={article.slug} href={`/blog/${article.slug}`} className="flex flex-col gap-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={article.thumb} alt="" className="aspect-[337/225] w-full object-cover" />
+              <img src={asset(article.thumb)} alt="" className="aspect-[337/225] w-full object-cover" />
               <p className="type-title">{article.title}</p>
               <p className="type-label text-ink-muted">{article.date}</p>
             </Link>

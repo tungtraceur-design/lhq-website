@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import { SiteShell } from "@/components/site-shell";
 import { DarkButton, PageTitle } from "@/components/media";
 import { socials } from "@/lib/content";
+import { asset } from "@/lib/asset";
 import { useLocale } from "@/lib/locale";
 
 export default function ContactPage() {
@@ -45,7 +46,7 @@ export default function ContactPage() {
             {socials.map((social) => (
               <a key={social.name} href={social.href} target="_blank" rel="noreferrer" aria-label={social.name}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={social.icon} alt="" className="size-10" />
+                <img src={asset(social.icon)} alt="" className="size-10" />
               </a>
             ))}
           </div>

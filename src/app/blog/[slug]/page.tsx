@@ -5,6 +5,7 @@ import { notFound, useParams } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
 import { ChevronLeft } from "@/components/icons";
 import { articles } from "@/lib/content";
+import { asset } from "@/lib/asset";
 import { useLocale } from "@/lib/locale";
 
 export default function ArticlePage() {
@@ -31,7 +32,7 @@ export default function ArticlePage() {
         <div className="mx-auto flex max-w-[740px] flex-col items-center gap-8 px-4 py-10">
           <p className="type-label text-ink-muted">{article.date}</p>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={article.image} alt="" className="aspect-[740/416] w-full object-cover" />
+          <img src={asset(article.image)} alt="" className="aspect-[740/416] w-full object-cover" />
           {article.body.map((paragraph) => (
             <p key={paragraph.slice(0, 24)} className="w-full text-[17px] leading-[1.65]">
               {paragraph}
@@ -39,7 +40,7 @@ export default function ArticlePage() {
           ))}
           {article.bodyImage ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={article.bodyImage} alt="" className="aspect-[740/406] w-full object-cover" />
+            <img src={asset(article.bodyImage)} alt="" className="aspect-[740/406] w-full object-cover" />
           ) : null}
           {article.more.map((paragraph) => (
             <p key={paragraph.slice(0, 24)} className="w-full text-[17px] leading-[1.65]">
@@ -55,7 +56,7 @@ export default function ArticlePage() {
             {articles.slice(0, 3).map((item) => (
               <Link key={item.slug} href={`/blog/${item.slug}`} className="flex flex-col gap-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={item.thumb} alt="" className="aspect-[337/225] w-full object-cover" />
+                <img src={asset(item.thumb)} alt="" className="aspect-[337/225] w-full object-cover" />
                 <p className="type-title">{item.title}</p>
                 <p className="type-label text-ink-muted">{item.date}</p>
               </Link>

@@ -43,6 +43,12 @@ next-env.d.ts
 # Reckless trial fonts (not licensed for distribution); commit licensed files instead
 /src/app/fonts/reckless/
 
+# Swear Banner demo files for local preview; commit the licensed web fonts instead
+/src/app/fonts/swear/
+
+# Same font files, served locally. A GitHub Pages build falls back when they are absent.
+/public/fonts/
+
 # design scratch files
 /.cursor/font-demos/
 /.cursor/logo/

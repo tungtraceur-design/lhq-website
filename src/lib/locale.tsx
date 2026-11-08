@@ -6,7 +6,7 @@ import { copy, type Locale } from "./content";
 type LocaleContextValue = {
   locale: Locale;
   setLocale: (locale: Locale) => void;
-  t: (typeof copy)["en"];
+  t: (typeof copy)[Locale];
 };
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);

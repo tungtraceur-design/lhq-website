@@ -61,7 +61,7 @@ export function HomeScreen() {
               className="home-fade shrink-0 lg:hidden"
               style={{ animationDelay: "120ms" }}
             >
-              <h1 className="font-display text-[44px] leading-[1.15] tracking-[-0.01em] text-ink">
+              <h1 className="font-hero text-[44px] leading-[1.15] tracking-[-0.01em] text-ink">
                 {locale === "en" ? (
                   <>
                     <span className="home-word" style={{ animationDelay: "200ms" }}>
@@ -127,7 +127,7 @@ export function HomeScreen() {
         </div>
 
         <div className="relative hidden min-h-0 flex-1 items-end gap-2.5 pr-8 pb-8 pl-[35px] lg:flex">
-          <h1 className="home-fade min-w-0 flex-1 font-display text-[72px] leading-[1.2] tracking-[-0.66px] text-ink">
+          <h1 className="home-fade min-w-0 flex-1 font-hero text-[72px] leading-[1.2] tracking-[-0.66px] text-ink">
             {locale === "en" ? (
               <>
                 <span className="home-word" style={{ animationDelay: "200ms" }}>

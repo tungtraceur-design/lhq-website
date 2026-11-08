@@ -11,6 +11,7 @@ import {
   milestones,
   testimonials,
 } from "@/lib/content";
+import { asset } from "@/lib/asset";
 import { useLocale } from "@/lib/locale";
 
 type Tab = "awards" | "biography" | "testimonials";
@@ -50,7 +51,7 @@ function AwardsPanel() {
           <div key={award.name} className="flex flex-col items-center gap-2 text-center">
             <div className="relative flex h-[122px] w-full items-center justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={award.image} alt="" className="max-h-[110px] max-w-[140px] object-contain opacity-70" />
+              <img src={asset(award.image)} alt="" className="max-h-[110px] max-w-[140px] object-contain opacity-70" />
             </div>
             <p className="type-title">{award.name}</p>
             <p className="type-label text-ink-muted">{award.count}</p>
@@ -192,7 +193,7 @@ function TestimonialCard({
     <article className="flex flex-col items-center gap-4 bg-white px-6 py-8">
       <div className="relative size-16 overflow-hidden rounded-full border border-stroke">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={image} alt="" className="h-full w-full object-cover" />
+        <img src={asset(image)} alt="" className="h-full w-full object-cover" />
       </div>
       <p className="text-center font-title text-[24px] italic leading-[32px]">“{quote}”</p>
       <p className="text-center text-xs font-medium uppercase leading-5 tracking-[0.1em] text-ink-muted">
