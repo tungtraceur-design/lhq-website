@@ -4,13 +4,13 @@ Date: 2026-11-08. Read this before you change the site. Motion specs stay in [tr
 
 ## Where the work is
 
-GitHub `main` has this build. A fresh clone has the pages, components, and étude images. The Reckless trial fonts are gitignored, so a clone will not show those faces until you add licensed files at `src/app/fonts/reckless/`.
+GitHub `main` has this build, including the font files in `public/fonts/`. A fresh clone can show Reckless and Swear Banner.
 
 Remote: https://github.com/tungtraceur-design/lhq-website
 
 Preview: https://tungtraceur-design.github.io/lhq-website/
 
-The preview is a static export from `.github/workflows/deploy.yml`. It does not include the Reckless or Swear files. Those stay on this machine. The preview uses Georgia until the licensed web fonts are in the build.
+The preview is a static export from `.github/workflows/deploy.yml`. The repository is public.
 
 ## Product
 
@@ -34,7 +34,7 @@ The user has already corrected two unrequested changes. Menu indexes are `01`, n
 
 ### Type
 
-Reckless (Displaay), trial files, `next/font/local` in `src/app/layout.tsx`.
+Reckless (Displaay) and Swear Banner (OH no) load from `public/fonts/` through `@font-face` in `globals.css`.
 
 | Token | Face | Use |
 | --- | --- | --- |
@@ -43,9 +43,7 @@ Reckless (Displaay), trial files, `next/font/local` in `src/app/layout.tsx`.
 | `--font-reckless-wide` | Wide XL bold | `--font-name` |
 | `--font-swear-banner` | Banner regular, italic | `--font-hero`, the two home headlines only |
 
-The home hero uses Swear Banner. Menu, page titles, and body stay in Reckless. Swear files live in `src/app/fonts/swear/` and are gitignored. The copies in the repo are the OH no demo files. The license is bought. Replace the demo files with the licensed WOFF2s of the same names before deploy.
-
-Reckless files live in `src/app/fonts/reckless/`. That folder is gitignored. **Trial fonts are not licensed for production.** Replace them with licensed WOFF2 files of the same names before deploy. Do not commit the trial files.
+The home hero uses Swear Banner. Menu, page titles, and body stay in Reckless. Both families are served from `public/fonts/`. The Swear files in the repo are still the OH no demo OTFs. Replace them with the licensed WOFF2s of the same family before a production deploy. The Reckless files are the Displaay trial WOFF2s. Replace those with licensed files before a production deploy.
 
 `globals.css` utilities: `type-label`, `type-title`, `type-heading`, `warm-mono`. These pages use them: About, Works, Blog, Events, Contact, menu, cards, player.
 

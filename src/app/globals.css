@@ -18,7 +18,7 @@
   --font-swear-banner: "Swear Banner";
 }
 
-/* Local preview files in /public/fonts. Missing files fall back to Georgia. */
+/* Font files in /public/fonts. Georgia is the fallback if a file is missing. */
 @font-face {
   font-family: "Reckless S";
   src: url("/fonts/reckless/reckless-s-regular.woff2") format("woff2");

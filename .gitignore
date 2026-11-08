@@ -40,14 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Reckless trial fonts (not licensed for distribution); commit licensed files instead
-/src/app/fonts/reckless/
-
-# Swear Banner demo files for local preview; commit the licensed web fonts instead
-/src/app/fonts/swear/
-
-# Same font files, served locally. A GitHub Pages build falls back when they are absent.
-/public/fonts/
+# Unused copies of the font files. The site serves public/fonts.
+/src/app/fonts/
 
 # design scratch files
 /.cursor/font-demos/
