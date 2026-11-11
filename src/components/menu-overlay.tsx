@@ -23,16 +23,19 @@ export function MenuOverlay({
             key={item.href}
             href={item.href}
             onClick={onClose}
-            className="group relative block border-b border-stroke font-display text-[36px] leading-12 tracking-[-0.01em] text-ink lg:text-[56px] lg:leading-[64px]"
+            className="group relative block border-b border-stroke font-hero text-[40px] leading-[48px] text-ink lg:text-[48px]"
           >
-            <span className="mx-auto flex h-[88px] max-w-[1440px] items-center gap-16 px-8 lg:h-auto lg:gap-40 lg:px-20 lg:py-4">
+            <span className="mx-auto flex h-[88px] max-w-[1440px] items-center gap-16 px-8 lg:gap-40 lg:px-20">
               <span
                 className="menu-item-in w-16 shrink-0 text-ink/25 transition-colors duration-300 ease-[cubic-bezier(0.74,0,0.27,0.99)] group-hover:text-ink group-focus-visible:text-ink"
                 style={{ animationDelay: `${240 + index * 40}ms` }}
               >
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <span className="menu-item-in" style={{ animationDelay: `${80 + index * 40}ms` }}>
+              <span
+                className="menu-item-in group-hover:font-bold group-hover:italic group-focus-visible:font-bold group-focus-visible:italic"
+                style={{ animationDelay: `${80 + index * 40}ms` }}
+              >
                 {t[item.key]}
               </span>
             </span>
